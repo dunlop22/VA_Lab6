@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import math
 import getch
 
-
 ##Расчет значений функции в точках
 def y_Count(x_):
     y_2 = []
@@ -12,8 +11,6 @@ def y_Count(x_):
         x = x_[i]
         y_2.append(eval(func))
     return y_2
-
-
 
 def simpson_(x_, y_, h):
 
@@ -35,7 +32,7 @@ def simpson_(x_, y_, h):
         rez = rez + (y_[i] * 2)
 
     rez = rez * h / 3
-    return 
+    return rez
 
 def Monte_Carlo(func, a, b ,n):
     x_ = np.arange(a, b + 0.001, 0.001)
@@ -80,10 +77,10 @@ h = float(input())
 print("\nКоличество точек (Монте-Карло): ", end = '');
 n = int(input())
 
-
 x_ = np.arange(a, b + h, h)
 y_ = y_Count(x_)
 
-print('\nМетод Симпсона: ', simpson_(x_, y_, h), end='')
+simpson_znach = simpson_(x_, y_, h)
+print('\nМетод Симпсона: ', simpson_znach, end='')
 
 print('\n\nМетод Монте-Карло: ', Monte_Carlo(func, a, b, n))
